@@ -106,8 +106,8 @@ def audit_listing(listing: dict) -> AuditResult:
     if missing_captions:
         add("photos", "warning", "Photos without captions (numbers as listed)",
             f"missing captions for photos n°{missing_captions}")
-    first_five_rooms = {(p.get("room") or "").lower() for p in photos[:5]}
-    if photos and len(first_five_rooms) < 3:
+    first_five_rooms = {(p.get("room") or "").lower() for p in photos[:5]} - {""}
+    if first_five_rooms and len(first_five_rooms) < 3:
         add("photos", "info",
             "First 5 photos show fewer than 3 different rooms; variety helps the cover sequence",
             f"first-5 rooms={sorted(first_five_rooms)}")

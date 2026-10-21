@@ -1,5 +1,9 @@
 # str-listing-audit
 
+[![CI](https://github.com/yassbybibiche-png/str-listing-audit/actions/workflows/ci.yml/badge.svg)](https://github.com/yassbybibiche-png/str-listing-audit/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](pyproject.toml)
+
 **Evidence-based audit toolkit for short-term rental listings** (Airbnb, Booking.com, Vrbo).
 
 Built by a professional property manager running ~30 listings, from the audit
@@ -29,7 +33,12 @@ git clone https://github.com/yassbybibiche-png/str-listing-audit.git
 cd str-listing-audit
 PYTHONPATH=src python -m str_listing_audit.cli examples/example_listing.json
 PYTHONPATH=src python -m str_listing_audit.cli examples/example_listing_poor.json --output report.md
+# Audit a whole portfolio from a CSV export (v0.2):
+PYTHONPATH=src python -m str_listing_audit.cli examples/example_portfolio.csv
 ```
+
+**Demo:** see the generated [portfolio report](docs/demo-portfolio-report.md) —
+3 listings ranked worst-first (64, 84, 100) with a prioritised fix list.
 
 Or install it:
 
@@ -76,10 +85,11 @@ shareable check — for independent hosts and concierge services alike.
 
 ## Roadmap
 
-- [ ] CSV / channel-manager export importers (SuperHote, Lodgify, Hostaway)
+- [x] Generic CSV importer for channel-manager exports *(v0.2)*
+- [x] Portfolio mode: rank all listings by score, prioritised fix list *(v0.2)*
+- [ ] Named export presets (SuperHote, Lodgify, Hostaway)
 - [ ] Competitor panel comparison (median price, cancellation, fees)
 - [ ] Photo-caption fidelity helper (captions must describe only what is visible)
-- [ ] Portfolio mode: rank all listings by score, export a prioritised fix list
 - [ ] French rule pack (registration number, Paris-specific requirements)
 
 See [docs/ROADMAP.md](docs/ROADMAP.md).

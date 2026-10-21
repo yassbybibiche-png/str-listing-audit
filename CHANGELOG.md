@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.2.0 — 2026-10-21
+
+- CSV importer: audit a whole channel-manager export (see `examples/example_portfolio.csv` for the expected columns).
+- Portfolio mode: when several listings are audited together, the report now ends with a ranking (worst first) and a prioritised fix list of every error.
+- Demo: a generated portfolio report is committed at `docs/demo-portfolio-report.md`.
+- Photo room-diversity check is now skipped when room data is absent (e.g. CSV imports) instead of guessing.
+
 ## 0.1.0 — 2026-10-21
 
 - First public release.
