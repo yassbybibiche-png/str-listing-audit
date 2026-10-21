@@ -25,7 +25,7 @@ guessed, never invented.
 No dependencies — Python 3.10+ only.
 
 ```bash
-git clone https://github.com/<your-username>/str-listing-audit.git
+git clone https://github.com/yassbybibiche-png/str-listing-audit.git
 cd str-listing-audit
 PYTHONPATH=src python -m str_listing_audit.cli examples/example_listing.json
 PYTHONPATH=src python -m str_listing_audit.cli examples/example_listing_poor.json --output report.md
